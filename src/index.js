@@ -1,12 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Gatto from './Gatto';
 import * as serviceWorker from './serviceWorker';
+import 'tachyons';
+import { quotes } from './quotes';
+import { randomid } from './utils';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Gatto name={quotes[0].personaggio} quote={quotes[0].citazioni[0]} id={randomid(10)} />
+    <Gatto name={quotes[1].personaggio} quote={quotes[1].citazioni[0]} id={randomid(10)} />
+    <Gatto name={quotes[2].personaggio} quote={quotes[2].citazioni[0]} id={randomid(10)} />
+    <Gatto name={quotes[3].personaggio} quote={quotes[3].citazioni[0]} id={randomid(10)} />
   </React.StrictMode>,
   document.getElementById('root')
 );
