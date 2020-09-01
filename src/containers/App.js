@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Gatti from './Gatti';
-import Radio from './Radio';
-import { randomid } from './utils';
+import Gatti from '../components/Gatti';
+import Radio from '../components/Radio';
+import { randomid } from '../utils';
 // import { quotes } from './quotes';
 
 class App extends Component {

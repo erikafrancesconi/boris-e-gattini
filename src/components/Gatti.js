@@ -1,7 +1,7 @@
 import React from 'react';
 import Gatto from './Gatto';
 import Flexbox from './Flexbox';
-import { randomid, shuffle } from './utils';
+import { randomid, shuffle } from '../utils';
 
 const Gatti = ({ imgtype, quotes }) => {
   let gattile = quotes.map(obj => {
