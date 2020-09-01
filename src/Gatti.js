@@ -1,5 +1,6 @@
 import React from 'react';
 import Gatto from './Gatto';
+import Flexbox from './Flexbox';
 import { randomid, shuffle } from './utils';
 
 const Gatti = ({ imgtype, quotes }) => {
@@ -20,9 +21,9 @@ const Gatti = ({ imgtype, quotes }) => {
   });
 
   return (
-      <div className='flex flex-wrap justify-center'>
+      <Flexbox>
         {gattile}
-      </div>
+      </Flexbox>
   );
 };
 
