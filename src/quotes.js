@@ -1,3 +1,4 @@
+// Currently useless, replaced with public/quotes.json
 export const quotes = [
   {
     id: 1,

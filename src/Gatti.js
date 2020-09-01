@@ -1,9 +1,8 @@
 import React from 'react';
 import Gatto from './Gatto';
-import { quotes } from './quotes';
 import { randomid, shuffle } from './utils';
 
-const Gatti = ({ imgtype }) => {
+const Gatti = ({ imgtype, quotes }) => {
   let gattile = quotes.map(obj => {
     const { id, personaggio, citazioni } = obj;
     const idcit = Math.floor(Math.random()*citazioni.length);
