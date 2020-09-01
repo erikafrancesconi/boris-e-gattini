@@ -34,7 +34,7 @@ class App extends Component {
   }
 
   render() {
-    if (this.state.quotes.length === 0) {
+    if (!this.state.quotes.length) {
       return (
         <p>Sto caricando i gattini...</p>
       )
