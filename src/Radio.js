@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Radio = ({ changeEv, value }) => {
+const Radio = ({ changeEv, reloadEvent, value }) => {
   return (
     <div className="tc f5 black-70">
       <p className="dib mv0">Che tipo di gattini vuoi?</p>
@@ -26,6 +26,12 @@ const Radio = ({ changeEv, value }) => {
         />
         <label htmlFor="tipoimg2" className="lh-copy pointer">GIF</label>
       </fieldset>
+      <input 
+        type="button" 
+        value="Ricarica" 
+        className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib ml3" 
+        onClick={reloadEvent} 
+      />
     </div>
   );
 };
