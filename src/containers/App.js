@@ -39,12 +39,13 @@ class App extends Component {
   }
 
   render() {
-    if (this.state.hasError) {
+    const { hasError, quotes, imgtype } = this.state;
+    if (hasError) {
       return (
         <p>Ops! Qualcosa non ha funzionato. Viva la merda!</p>
       )
     }
-    if (!this.state.quotes.length) {
+    if (!quotes.length) {
       return (
         <p>Sto caricando i gattini...</p>
       )
@@ -54,9 +55,9 @@ class App extends Component {
         <header>
           <h1 className='tc mv3'>Boris e Gattini</h1>
         </header>
-        <Radio changeEv={this.onTypeChange} reloadEvent={this.onReload} value={this.state.imgtype}/>
+        <Radio changeEv={this.onTypeChange} reloadEvent={this.onReload} value={imgtype}/>
         <ErrorBoundary>
-          <Gatti imgtype={this.state.imgtype} quotes={this.state.quotes} />
+          <Gatti imgtype={imgtype} quotes={quotes} />
         </ErrorBoundary>
         <footer className='tc f7'>
           <p>Citazioni di Boris di <a href="https://it.wikiquote.org/wiki/Pagina_principale">Wikiquote</a>, Gattini di <a href="https://cataas.com/">CATAAS</a></p>
