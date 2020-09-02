@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Gatti from '../components/Gatti';
 import Radio from '../components/Radio';
+import ErrorBoundary from '../components/ErrorBoundary'
 import { randomid } from '../utils';
 // import { quotes } from './quotes';
 
@@ -10,7 +11,8 @@ class App extends Component {
     this.state = {
       quotes : [],
       imgtype : '',
-      rid : ''
+      rid : '',
+      hasError : false
     };
   }
 
@@ -21,7 +23,10 @@ class App extends Component {
         response.json()
       )
       .then(quotes => {
-        this.setState({quotes: quotes})
+        this.setState({quotes: quotes});
+      })
+      .catch(error => {
+        this.setState({hasError: true});
       })
   }
 
@@ -34,6 +39,11 @@ class App extends Component {
   }
 
   render() {
+    if (this.state.hasError) {
+      return (
+        <p>Ops! Qualcosa non ha funzionato. Viva la merda!</p>
+      )
+    }
     if (!this.state.quotes.length) {
       return (
         <p>Sto caricando i gattini...</p>
@@ -45,7 +55,9 @@ class App extends Component {
           <h1 className='tc mv3'>Boris e Gattini</h1>
         </header>
         <Radio changeEv={this.onTypeChange} reloadEvent={this.onReload} value={this.state.imgtype}/>
-        <Gatti imgtype={this.state.imgtype} quotes={this.state.quotes} />
+        <ErrorBoundary>
+          <Gatti imgtype={this.state.imgtype} quotes={this.state.quotes} />
+        </ErrorBoundary>
         <footer className='tc f7'>
           <p>Citazioni di Boris di <a href="https://it.wikiquote.org/wiki/Pagina_principale">Wikiquote</a>, Gattini di <a href="https://cataas.com/">CATAAS</a></p>
         </footer>

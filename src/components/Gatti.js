@@ -4,6 +4,10 @@ import Flexbox from './Flexbox';
 import { randomid, shuffle } from '../utils';
 
 const Gatti = ({ imgtype, quotes }) => {
+  // Leaving it here in case I need to test ErrorBoundary
+  // if (true) {
+  //   throw new Error('Mamma mia la monnezza che ho fatto...')
+  // }
   let gattile = quotes.map(obj => {
     const { id, personaggio, citazioni } = obj;
     const idcit = Math.floor(Math.random()*citazioni.length);
