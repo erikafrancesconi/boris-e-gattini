@@ -4,7 +4,7 @@ const Radio = ({ changeEv, reloadEvent, value }) => {
   return (
     <div className="tc f5 black-70">
       <p className="dib mv0">Che tipo di gattini vuoi?</p>
-      <fieldset className="dib bn pv1">
+      <fieldset className="dib bn pv1 h-14">
         <input 
           type="radio" 
           name="tipoimg" 
