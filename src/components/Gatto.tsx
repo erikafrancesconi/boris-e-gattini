@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 
-const Gatto = ({ imgtype, id, name, quote }) => {
+type GattoTipo = {  imgtype: string, id: string, name: string, quote: string };
+
+const Gatto: FunctionComponent<GattoTipo> = ({ imgtype, id, name, quote }) => {
   return (
     <React.Fragment>
       <article className="mw5 bg-near-white br3 pa4 mv3 mh3 ba b--black-10">

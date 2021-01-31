@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, ChangeEvent } from 'react';
 import Gatti from '../components/Gatti';
 import Radio from '../components/Radio';
 import ErrorBoundary from '../components/ErrorBoundary'
@@ -29,7 +29,7 @@ const App = () => {
   // eseguito al cambio di quelle variabili (quindi se ad esempio volessi usare l'effetto
   // al cambio delle variabili rid e imgtype dovrei passare [rid, imgtype]
 
-  const onTypeChange = event => {
+  const onTypeChange = (event: ChangeEvent<HTMLInputElement>) => {
     setImgType(event.target.value);
   }
 
@@ -54,7 +54,7 @@ const App = () => {
       </header>
       <Radio changeEv={onTypeChange} reloadEvent={onReload} value={imgtype}/>
       <ErrorBoundary>
-        <Gatti imgtype={imgtype} quotes={quotes} rid={rid} />
+        <Gatti imgtype={imgtype} quotes={quotes} />
       </ErrorBoundary>
       <footer className='tc f7'>
         <p>Citazioni di Boris di <a href="https://it.wikiquote.org/wiki/Pagina_principale">Wikiquote</a>, Gattini di <a href="https://cataas.com/">CATAAS</a></p>

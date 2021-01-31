@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import Gatto from './Gatto';
 import Flexbox from './Flexbox';
 import { randomid, shuffle } from '../utils';
 
-const Gatti = ({ imgtype, quotes }) => {
+type Tipigatti = {  imgtype: string, quotes: { id: number, personaggio: string, citazioni: string[] }[] };
+
+const Gatti: FunctionComponent<Tipigatti>  = ({ imgtype, quotes }) => {
   // Leaving it here in case I need to test ErrorBoundary
   // if (true) {
   //   throw new Error('Mamma mia la monnezza che ho fatto...')
